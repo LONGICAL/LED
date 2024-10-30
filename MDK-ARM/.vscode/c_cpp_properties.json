@@ -1,0 +1,33 @@
+{
+    "configurations": [
+        {
+            "name": "windows-gcc-x64",
+            "includePath": [
+            "C:/Users/LONG/Desktop/LED/**",
+            "C:/Users/LONG/Desktop/LED/MDK-ARM/**",
+            "C:/Users/LONG/Desktop/LED/Core/**",
+            "C:/Users/LONG/Desktop/LED/Drivers/**",
+            "C:/Users/LONG/Desktop/LED/Drivers/STM32H7xx_HAL_Driver/**",
+            "C:/Users/LONG/Desktop/LED/Drivers/CMSIS/**",
+            "C:/Users/LONG/Desktop/LED/Middlewares/Third_Party/FreeRTOS/Source/include",
+            "C:/Users/LONG/Desktop/LED/Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F"
+
+            ],
+            "defines": [
+                "USE_HAL_DRIVER",
+                "STM32H743xx",
+                "__IO=volatile",
+                "__weak=__attribute__((weak))",
+                "USE_FULL_LL_DRIVER"
+            ],            
+            "compilerPath": "C:/Keil_v5/ARM/mingw64/bin/gcc.exe",
+            "cStandard": "${default}",
+            "cppStandard": "${default}",
+            "intelliSenseMode": "windows-gcc-x64",
+            "compilerArgs": [
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
