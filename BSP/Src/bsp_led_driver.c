@@ -30,6 +30,21 @@
 
 //******************************** Includes *********************************//
 //******************************** Defines **********************************//
+#ifndef OS_SUPPORT
+/**
+ * @brief perform the detailed of the bsp_led_driver_t targrt.
+ *
+ * Steps:
+ * 1. analyze the target paras.
+ * 2. do the appropriate aperation of led.
+ *
+ * @param[in] 
+ *
+ * @return led_status_t : The status of running.
+ **/
+
+#endif // OS_SUPPORT
+
 /**
  * @brief Init the target of bsp_led_driver_t.
  *
