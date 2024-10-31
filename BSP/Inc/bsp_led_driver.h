@@ -69,7 +69,7 @@ typedef struct
 
 typedef struct
 {
-    led_status_t (*pf_get_time_ms)(uint32_t *const);/* getting current time   */
+    led_status_t (*pf_get_time_ms)(uint32_t *const);/* getting current time  */
 } time_base_ms_t;
 
 typedef struct

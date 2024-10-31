@@ -38,10 +38,21 @@
  * 1. analyze the target paras.
  * 2. do the appropriate aperation of led.
  *
- * @param[in] 
+ * @param[in]
  *
  * @return led_status_t : The status of running.
  **/
+typedef led_status_t (*pf_led_control_t)(
+                              bsp_led_driver_t *const self,
+                              uint32_t cycle_time,      /* cycle_time[ms]    */
+                              uint32_t blink_time,      /* blink_times[times]*/
+                              PROPORTION_t proportion); /* portportion_on_off*/
+
+/********* 0.Checking the target status ***********/
+// 1.check if the target has been initialized.
+// 2.if not instantiated, return error to caller.
+
+/********* 1.Checking the input parameter *********/
 
 #endif // OS_SUPPORT
 
