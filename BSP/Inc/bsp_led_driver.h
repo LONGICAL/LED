@@ -23,8 +23,8 @@
  * @note 1 tab == 4 spaces!
  *
  *****************************************************************************/
-#ifndef __EC_BSP_AHT21_DRIVER_H__ // Avoid repeated including same files later
-#define __EC_BSP_AHT21_DRIVER_H__
+#ifndef __BSP_LED_DRIVER_H__ // Avoid repeated including same files later
+#define __BSP_LED_DRIVER_H__
 
 //******************************** Defines **********************************//
 
@@ -39,7 +39,9 @@
 
 #define OS_SUPPORTING          /*OS_SUPPORTING depending on OS avaliable     */
 #define DEBUG                  /*Enable DEBUG                                */
-#define DEBUG_OUT(X) printf(X) /* DEBUG output innfoto indicate statu        */ 
+#define DEBUG_OUT(X) printf(X) /* DEBUG output innfoto indicate statu        */
+
+typedef struct bsp_led_driver bsp_led_driver_t;
 
 typedef enum
 {
@@ -59,7 +61,7 @@ typedef enum
     PROPORTION_1_2 = 1,    /* Ratio of 1:2                                   */
     PROPORTION_1_1 = 2,    /* Ratio of 1:1 (Equal proportion)                */
     PROPORTION_x_x = 0xff, /* Custom ratio                                   */
-} PROPORTION_t;
+} proportion_t;
 
 typedef struct
 {
@@ -78,11 +80,12 @@ typedef struct
 } os_delay_t;
 
 typedef led_status_t (*pf_led_control_t)(
+                            bsp_led_driver_t *const self,
                             uint32_t,      /* cycle_time[ms]                 */
                             uint32_t,      /* blink_times[times]             */
-                            PROPORTION_t   /* portportion_on_off             */
+                            proportion_t   /* portportion_on_off             */
                                         );
-typedef struct
+typedef struct bsp_led_driver
 {
     /**** Target of Internal Status *****/
     uint8_t                     is_inited;
@@ -93,7 +96,7 @@ typedef struct
     /* The times of blink               */
     uint32_t                  blink_times;
     /* The time of light on and off     */
-    PROPORTION_t        porportion_on_off;
+    proportion_t        porportion_on_off;
 
     /******* target of IOs needed *******/
     /* The intersurface from core layer */
@@ -138,4 +141,4 @@ led_status_t led_driver_t_inst(
     const time_base_ms_t *const time_base);
 
 //******************************** Declaring ********************************//
-#endif // end of __EC_BSP_AHT21_DRIVER_H__
+#endif // end of _BSP_AHT21_DRIVER_H__
